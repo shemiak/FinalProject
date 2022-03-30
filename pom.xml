@@ -22,7 +22,7 @@
     <description>Demo project for Spring Boot</description>
     <modules>
         <module>client</module>
-        <module>server-bank</module>
+        <module>server</module>
     </modules>
     <dependencies>
         <dependency>
