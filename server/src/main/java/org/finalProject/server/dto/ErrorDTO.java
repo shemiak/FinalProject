@@ -3,11 +3,9 @@ package org.finalProject.server.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.math.BigDecimal;
-
 @AllArgsConstructor
 @Getter
-public class BalanceDTO {
+public class ErrorDTO {
 
-    private BigDecimal balance;
+    private String message;
 }
