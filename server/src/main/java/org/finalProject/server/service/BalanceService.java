@@ -1,7 +1,7 @@
 package org.finalProject.server.service;
 
-import org.finalProject.server.dto.BalanceDTO;
+import org.finalProject.server.dto.BalanceDto;
 
 public interface BalanceService {
-    BalanceDTO getBalance(String cardNumber);
+    BalanceDto getBalance(String cardNumber);
 }

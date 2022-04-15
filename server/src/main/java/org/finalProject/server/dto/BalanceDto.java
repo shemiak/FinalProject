@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @AllArgsConstructor
 @Getter
-public class BalanceDTO {
+public class BalanceDto {
 
     private BigDecimal balance;
 }

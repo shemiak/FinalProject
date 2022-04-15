@@ -1,8 +1,8 @@
 package org.finalProject.server.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.finalProject.server.dto.BalanceDTO;
-import org.finalProject.server.dto.ErrorDTO;
+import org.finalProject.server.dto.BalanceDto;
+import org.finalProject.server.dto.ErrorDto;
 import org.finalProject.server.exception.BalanceNotFoundException;
 import org.finalProject.server.service.impl.BalanceServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -21,13 +21,13 @@ public class BalanceController {
     private final BalanceServiceImpl balanceService;
 
     @GetMapping("/balance")
-    public ResponseEntity<BalanceDTO> getBalance(@AuthenticationPrincipal UserDetails details) {
+    public ResponseEntity<BalanceDto> getBalance(@AuthenticationPrincipal UserDetails details) {
         return ResponseEntity.ok(balanceService.getBalance(details.getUsername()));
     }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler({BalanceNotFoundException.class})
-    public ResponseEntity<ErrorDTO> handleBalanceNotFound() {
-        return new ResponseEntity<>(new ErrorDTO("This account doesn't have balance"), HttpStatus.NOT_FOUND);
+    public ResponseEntity<ErrorDto> handleBalanceNotFound() {
+        return new ResponseEntity<>(new ErrorDto("This account doesn't have balance"), HttpStatus.NOT_FOUND);
     }
 }
